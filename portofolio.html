@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>StyaNet</title>
+        
+        <meta name="description" content="StyaNet menyediakan layanan pemasangan WiFi dan CCTV profesional di Jawa Tengah. Internet cepat dan keamanan rumah/gedung terpercaya." />
+        <meta name="keywords" content="WiFi Jateng, Pasang WiFi Jawa Tengah, CCTV Jateng, Instalasi CCTV Jawa Tengah, Jasa pasang WiFi dan CCTV Jateng, Internet rumahan Jateng, Provider internet Jateng, Kamera CCTV murah Jateng, IP Camera Jateng, StyaNet" />
+        <meta name="author" content="StyaNet" />
+        <meta name="robots" content="index, follow" />
+
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        />
+
+        <style>
+            
+            body {
+                margin: 0;
+                font-family: "Poppins", sans-serif;
+                background: #f7f9fc;
+                color: #333;
+            }
+            a {
+                text-decoration: none;
+                color: inherit;
+            }
+            h1,
+            h2,
+            h3 {
+                margin: 0;
+            }
+            
+            header {
+                background: #007bff;
+                color: white;
+                padding: 1rem 2rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            nav {
+                display: flex;
+                align-items: center;
+            }
+            .nav-links {
+                display: flex;
+                gap: 1.5rem;
+            }
+            .nav-links a {
+                font-size: 1rem;
+                font-weight: 500;
+                transition: color 0.3s;
+            }
+            .nav-links a:hover {
+                color: #cce5ff;
+            }
+            .hamburger {
+                display: none;
+                flex-direction: column;
+                cursor: pointer;
+                gap: 5px;
+            }
+            .hamburger div {
+                width: 25px;
+                height: 3px;
+                background: white;
+                transition: all 0.3s;
+            }
+            .hamburger.active div:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+            .hamburger.active div:nth-child(2) {
+                opacity: 0;
+            }
+            .hamburger.active div:nth-child(3) {
+                transform: rotate(-45deg) translate(5px, -5px);
+            }
+
+            @media (max-width: 768px) {
+                .nav-links {
+                    position: absolute;
+                    top: 70px;
+                    right: 0;
+                    background: #007bff;
+                    flex-direction: column;
+                    width: 100%;
+                    max-height: 0;
+                    overflow: hidden;
+                    transition: all 0.5s ease;
+                }
+                .nav-links.active {
+                    max-height: 300px;
+                    padding: 1rem 0;
+                }
+                .hamburger {
+                    display: flex;
+                }
+            }
+
+            
+            section {
+                padding: 3rem 1.5rem;
+                max-width: 1200px;
+                margin: auto;
+                text-align: center;
+            }
+            section h2 {
+                margin-bottom: 2rem;
+                color: #007bff;
+            }
+
+            
+            .profile-card {
+                background: white;
+                padding: 2rem;
+                border-radius: 15px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+                max-width: 350px;
+                margin: auto;
+                text-align: center;
+            }
+            .profile-card img {
+                width: 120px;
+                height: 120px;
+                border-radius: 50%;
+                object-fit: cover;
+                margin-bottom: 1rem;
+            }
+            .contact-buttons {
+                margin-top: 1.5rem;
+                display: flex;
+                gap: 1rem;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            .btn {
+                padding: 0.7rem 1.5rem;
+                border-radius: 50px;
+                color: white;
+                font-weight: bold;
+                transition: background 0.3s;
+            }
+            .btn-wa {
+                background: #25d366;
+            }
+            .btn-wa:hover {
+                background: #1ebe57;
+            }
+            .btn-service {
+                background: #0056b3;
+            }
+            .btn-service:hover {
+                background: #003d82;
+            }
+
+            
+            .services {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 2rem;
+            }
+            .service-card {
+                background: white;
+                padding: 2rem;
+                border-radius: 10px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+                transition: transform 0.3s;
+            }
+            .service-card:hover {
+                transform: translateY(-5px);
+            }
+            .service-card i {
+                color: #007bff;
+                margin-bottom: 1rem;
+                font-size: 2.5rem;
+            }
+
+            footer {
+                background: #007bff;
+                color: white;
+                padding: 3rem 1.5rem;
+                margin-top: 3rem;
+            }
+            .footer-container {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+                gap: 2rem;
+                max-width: 1200px;
+                margin: auto;
+            }
+            .footer-container h4 {
+                margin-bottom: 1rem;
+            }
+            .footer-container a {
+                display: block;
+                margin-bottom: 0.5rem;
+                font-size: 1rem;
+            }
+            .social-icons a {
+                font-size: 1.5rem;
+                margin-right: 0.7rem;
+                color: white;
+            }
+            .social-icons a:hover {
+                color: #cce5ff;
+            }
+            .copyright {
+                text-align: center;
+                margin-top: 2rem;
+                font-size: 0.9rem;
+            }
+
+            
+            form {
+                background: white;
+                padding: 2rem;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+                max-width: 500px;
+                margin: auto;
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+            }
+            input,
+            select {
+                padding: 0.8rem;
+                border-radius: 5px;
+                border: 1px solid #ccc;
+                font-size: 1rem;
+                width: 100%;
+            }
+            button {
+                padding: 0.8rem;
+                border-radius: 5px;
+                border: none;
+                background: #007bff;
+                color: white;
+                font-size: 1rem;
+                cursor: pointer;
+                transition: background 0.3s;
+            }
+            button:hover {
+                background: #0056b3;
+            }
+        </style>
+    </head>
+
+    <body>
+        
+        <header>
+            <h1>Setyo.Net</h1>
+            <nav class="nav-links" id="nav-links">
+                <a href="#profil">Profil</a>
+                <a href="#layanan">Layanan</a>
+                <a href="#lokasi">Lokasi</a>
+                <a href="#kontak">Kontak</a>
+            </nav>
+            <div class="hamburger" id="hamburger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </header>
+
+        
+        <section id="profil">
+            <h2>Tentang Saya</h2>
+            <div class="profile-card">
+                <img src="sty.jpg" alt="Foto Profil" />
+                <h3>StyaNet</h3>
+                <p>Network and Wifi</p>
+            </div>
+        </section>
+
+       
+        <section id="layanan">
+            <h2>Layanan Yang Saya Sediakan</h2>
+            <div class="services">
+                <div class="service-card">
+                    <i class="fas fa-wifi"></i>
+                    <h3>Instalasi jaringan LAN & WiFi</h3>
+                    <p>
+                        Instalasi internet cepat dan stabil untuk semua
+                        kebutuhan Anda.
+                    </p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-video"></i>
+                    <h3>Instalasi CCTV (analog & IP)</h3>
+                    <p>
+                        Layanan instalasi CCTV profesional, mencakup kamera analog dan IP untuk kebutuhan keamanan rumah, kantor, atau bisnis Anda. Sistem dipasang dan dikonfigurasi secara optimal untuk pemantauan real-time dan perekaman berkualitas tinggi.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Setting remote CCTV (akses via HP)</h3>
+                    <p>
+                       Konfigurasi akses CCTV jarak jauh melalui smartphone, memungkinkan Anda memantau kamera kapan saja dan di mana saja dengan aman dan mudah. 
+                    </p>
+                </div>
+                                <div class="service-card">
+                    <i class="fas fa-network-wired"></i>
+                    <h3>Perapihan & perbaikan sistem jaringan</h3>
+                    <p>
+                       Layanan perapihan dan perbaikan sistem jaringan kabel maupun nirkabel untuk memastikan koneksi yang stabil, rapi, dan optimal di lingkungan rumah atau kantor. 
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        
+<section id="lokasi">
+    <h2>Lokasi Saya</h2>
+    <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.626758535029!2d110.950000!3d-7.000000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xabcdef123456789!2sGenengadal%2C%20Kabupaten%20Grobogan%2C%20Jawa%20Tengah!5e0!3m2!1sen!2sid!4v1714700000000"
+        style="
+            width: 100%;
+            height: 300px;
+            border: 0;
+            border-radius: 10px;
+        "
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+    ></iframe>
+</section>
+
+        
+        <section id="kontak">
+            <h2>Hubungi Kami</h2>
+            <form id="contactForm">
+                <input type="text" id="name" placeholder="Nama Anda" required />
+                <select id="service" required>
+                    <option value="">-- Pilih Layanan --</option>
+                    <option value="Instalasi jaringan LAN & WiFi">Instalasi jaringan LAN & WiFi</option>
+                    <option value="Instalasi CCTV (analog & IP)">Instalasi CCTV (analog & IP)</option>
+                    <option value="Setting remote CCTV (akses via HP)">Setting remote CCTV (akses via HP)</option>
+                    <option value="Perapihan & perbaikan sistem jaringa">Perapihan & perbaikan sistem jaringa</option>
+                    <option value="Konsultasi">Konsultasi</option>
+                </select>
+                <button type="submit">Chat WhatsApp</button>
+            </form>
+        </section>
+
+       
+        <footer>
+            <div class="footer-container">
+                <div>
+                    <h4>Menu</h4>
+                    <a href="#profil">Profil</a>
+                    <a href="#layanan">Layanan</a>
+                    <a href="#lokasi">Lokasi</a>
+                    <a href="#kontak">Kontak</a>
+                </div>
+                <div>
+                    <h4>Kontak</h4>
+                    <p>Telepon: +62 889-8093-7420</p>
+                    <p>Email: alistystysty@gmail.com</p>
+                    <p>Alamat: Jateng, Indonesia</p>
+                </div>
+                <div>
+                    <h4>Ikuti Kami</h4>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/share/1EXfxYpMAK/"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/styo_alhar_yt/"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@im.styo"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 Setyo. All Rights Reserved.
+            </div>
+        </footer>
+
+        
+        <script>
+            
+            const hamburger = document.getElementById("hamburger");
+            const navLinks = document.getElementById("nav-links");
+
+            hamburger.addEventListener("click", () => {
+                hamburger.classList.toggle("active");
+                navLinks.classList.toggle("active");
+            });
+
+            const contactForm = document.getElementById("contactForm");
+
+            contactForm.addEventListener("submit", e => {
+                e.preventDefault();
+                const name = document.getElementById("name").value.trim();
+                const service = document.getElementById("service").value;
+
+                let waMessage = "";
+
+                if (service === "Konsultasi") {
+                    waMessage = "";
+                } else {
+                    waMessage = `Halo, nama saya ${name}. Saya ingin menggunakan layanan ${service}.`;
+                }
+
+                const phoneNumber = "6281234567890";
+                const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+                    waMessage
+                )}`;
+                window.open(url, "_blank");
+            });
+        </script>
+    </body>
+</html>
+
